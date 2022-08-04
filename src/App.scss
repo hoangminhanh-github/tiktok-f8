@@ -1,0 +1,49 @@
+@import "normalize.css";
+@import "tippy.js/animations/scale.css";
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #fe2c55;
+  --default-width: 1150px;
+  --black: #000;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  box-sizing: border-box;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+a {
+  color: black;
+  text-decoration: none;
+  padding: 0;
+}
+
+/*custom tippy */
+body {
+  .tippy-box {
+    text-align: left;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    background-color: rgba(84, 84, 84, 0.92);
+    color: rgb(255, 255, 255);
+    padding: 2px 4px;
+  }
+}

@@ -1,0 +1,53 @@
+.wrapper {
+  min-width: 100px;
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: white;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  & + .wrapper {
+    margin-left: 8px;
+  }
+
+  &.disable {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.icon + .title,
+.title + .icon {
+  margin-left: 8px;
+}
+
+// button types
+.primary {
+  color: white;
+  background-color: var(--primary-color);
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      #fe2c55;
+  }
+}
+.outline {
+  color: rgba(254, 44, 85, 1);
+  border-color: rgba(254, 44, 85, 1);
+}
+
+// button size
+
+.small {
+  min-width: 88px;
+  padding: 4px 16px;
+}
+.medium {
+}
+.large {
+  min-width: 140px;
+  padding: 14px 16px;
+}
