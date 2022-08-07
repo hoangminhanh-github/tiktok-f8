@@ -6,22 +6,30 @@ import Following from "../Pages/Following/Following";
 import Upload from "../Pages/Upload/Upload";
 import LayoutOnlyHeader from "../Components/Layouts/LayoutOnlyHeader";
 import Search from "../Pages/Search/Search";
+
 export interface IRoutes {
   path: string;
   component: JSX.Element;
   layout?: ({ children }: any) => JSX.Element | any;
 }
 
+export const ROUTES = {
+  home: "/",
+  following: "/following",
+  upload: "/upload",
+  search: "/search",
+};
+
 export const publicRoutes = [
-  { path: "/", component: <Home></Home> },
-  { path: "/following", component: <Following></Following> },
+  { path: ROUTES.home, component: <Home></Home> },
+  { path: ROUTES.following, component: <Following></Following> },
   {
-    path: "/upload",
+    path: ROUTES.upload,
     component: <Upload></Upload>,
     layout: LayoutOnlyHeader,
   },
   {
-    path: "search",
+    path: ROUTES.search,
     component: <Search></Search>,
     layout: Fragment,
   },

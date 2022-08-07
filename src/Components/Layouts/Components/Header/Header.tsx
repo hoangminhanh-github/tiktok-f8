@@ -25,49 +25,20 @@ import AccountItem from "../../../Account/AccountItem";
 import Button from "../../../Button";
 import Menu from "../../../Popper/Menu";
 import { MENU_ITEM, USER_MENU } from "../../../../utils/menu-item";
+import Search from "./Search/Search";
+import { ROUTES } from "../../../../config/Router";
 const cx = classNames.bind(styles);
 const Header = () => {
   const [currentUser, setCurrentUser] = useState(true);
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <div className={cx("logo")}>
+        <Link to={ROUTES.home} className={cx("logo")}>
           <img src={images.logo} alt="tiktok" />
-        </div>
-        <>
-          <HeadLessTippy
-            placement="bottom-start"
-            interactive
-            render={(attrs) => (
-              <div className={cx("search-result")} tabIndex={-1} {...attrs}>
-                <Popper>
-                  <AccountItem></AccountItem>
-                  <AccountItem></AccountItem>
-                  <AccountItem></AccountItem>
-                </Popper>
-              </div>
-            )}
-          >
-            <div className={cx("search")}>
-              <input
-                type="text"
-                placeholder="Tìm kiếm tài khoản và video"
-                spellCheck="false"
-              />
-              <button className={cx("clear")}>
-                {/* clear */}
-                <AiFillCloseCircle></AiFillCloseCircle>
-              </button>
-              {/* loading */}
-              <AiOutlineLoading3Quarters></AiOutlineLoading3Quarters>
-              <span className={cx("line")}></span>
-              <button title="search-btn" className={cx("search-btn")}>
-                <AiOutlineSearch></AiOutlineSearch>
-              </button>
-            </div>
-          </HeadLessTippy>
-        </>
+        </Link>
 
+        {/* search */}
+        <Search></Search>
         <div className={cx("action")}>
           {currentUser ? (
             <>
